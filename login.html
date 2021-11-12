@@ -8,6 +8,12 @@
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FreeHTML5.co" />
+	
+	//추가
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="994208753104-vq9u8mr20638bjs0qh573u8ckinmh1nu.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	
 
 	<!-- 
 	//////////////////////////////////////////////////////
@@ -120,11 +126,41 @@
                   <button type="button" class="btn" onclick="button()">
                     LOG IN
                   </button>
-                  <script>
+				  
+				  //혹시
+				  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+   				  <button type="button" onclick="signOut();">Sign Out</button>
+                  //혹시
+
+				  <script>
                     let button = () => {
                       alert('login Button !')
                     }
                   </script>
+				  //혹시
+				  
+				  <script>
+					function onSignIn(googleUser) {
+					  // Useful data for your client-side scripts:
+					  var profile = googleUser.getBasicProfile();
+					  console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+					  console.log('Full Name: ' + profile.getName());
+					  console.log('Given Name: ' + profile.getGivenName());
+					  console.log('Family Name: ' + profile.getFamilyName());
+					  console.log("Image URL: " + profile.getImageUrl());
+					  console.log("Email: " + profile.getEmail());
+			  
+					  // The ID token you need to pass to your backend:
+					  var id_token = googleUser.getAuthResponse().id_token;
+					  console.log("ID Token: " + id_token);
+					}
+			  
+					function signOut(){
+						gapi.auth2.getAuthInstance().disconnect();
+					}
+				  </script>
+				  //
+
                   <div class="bottomText">
                     Don't you have ID? <a href="#">sign up</a>
                   </div>
