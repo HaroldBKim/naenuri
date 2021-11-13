@@ -9,7 +9,6 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FreeHTML5.co" />
 	
-	//추가
 	<meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="994208753104-vq9u8mr20638bjs0qh573u8ckinmh1nu.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -123,21 +122,19 @@
                   <div class="passForm">
                     <input type="password" class="pw" placeholder="PW">
                   </div>
-                  <button type="button" class="btn" onclick="button()">
-                    LOG IN
-                  </button>
+                  
 				  
-				  //혹시
+
 				  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
    				  <button type="button" onclick="signOut();">Sign Out</button>
-                  //혹시
+                  
 
 				  <script>
                     let button = () => {
                       alert('login Button !')
                     }
                   </script>
-				  //혹시
+
 				  
 				  <script>
 					function onSignIn(googleUser) {
@@ -159,7 +156,7 @@
 						gapi.auth2.getAuthInstance().disconnect();
 					}
 				  </script>
-				  //
+
 
                   <div class="bottomText">
                     Don't you have ID? <a href="#">sign up</a>
